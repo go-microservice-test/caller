@@ -28,7 +28,7 @@ func main() {
 	})
 
 	// run the server
-	err := r.Run(":3000")
+	err := r.Run(":8080")
 	if err != nil {
 		log.Fatal(err)
 	}
