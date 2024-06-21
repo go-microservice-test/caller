@@ -11,7 +11,7 @@ func main() {
 	// get an engine instance
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
-		response, err := http.Get("http://localhost:3000/animals")
+		response, err := http.Get("http://gin-receiver:3000/animals")
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to connect to the CRUD server"})
 			return
@@ -28,7 +28,7 @@ func main() {
 	})
 
 	// run the server
-	err := r.Run(":8080")
+	err := r.Run(":3000")
 	if err != nil {
 		log.Fatal(err)
 	}
